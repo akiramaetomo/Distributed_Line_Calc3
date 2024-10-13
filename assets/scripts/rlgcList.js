@@ -1,5 +1,4 @@
-// rlgcList.js
-
+// rlgcList.js 24-1013
 
 // RLGC一覧のテーブルとステータスメッセージを取得
 const rlgcTableBody = document.querySelector('#rlgcTable tbody');
