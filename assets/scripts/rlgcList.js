@@ -1,5 +1,6 @@
 // rlgcList.js
 
+
 // RLGC一覧のテーブルとステータスメッセージを取得
 const rlgcTableBody = document.querySelector('#rlgcTable tbody');
 const statusElement = document.getElementById('status');
