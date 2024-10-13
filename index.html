@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Line Calculator</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+
+<body>
+    <h1>Distributed Line Calculator <span class="version">ver 0.9</span></h1>
+        <div class="container">
+
+        <!-- Main Content Wrapper for Flex Layout -->
+        <div class="main-content">
+        
+            <!-- RLGC Management Section -->
+            <section class="rlgc-management">
+                <h2>デバイス管理</h2>
+                <div class="rlgc-selection">
+                    <label for="rlgc-select">選択:</label>
+                    <select id="rlgc-select">
+                        <!-- オプションはJavaScriptで動的に追加 -->
+                    </select>
+                    <button id="open-rlgc-list">デバイス一覧</button>
+                </div>
+
+                <div class="rlgc-form">
+                    <h3>追加/編集</h3>
+                    <form id="rlgc-form">
+                        <input type="hidden" id="rlgc-id" value="">
+                        <div class="input-group">
+                            <label for="rlgc-name">デバイス名:</label>
+                            <input type="text" id="rlgc-name" name="rlgc_name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="rlgc-r">R (Ω/km):</label>
+                            <input type="number" id="rlgc-r" name="rlgc_r" value="31.5" min="0" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="rlgc-l">L (H/km):</label>
+                            <input type="number" id="rlgc-l" name="rlgc_l" value="0.605e-3" min="0" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="rlgc-g">G (S/km):</label>
+                            <input type="number" id="rlgc-g" name="rlgc_g" value="4.35E-5" min="0" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="rlgc-c">C (F/km):</label>
+                            <input type="number" id="rlgc-c" name="rlgc_c" value="0.0488e-6" min="0" step="any" required>
+                        </div>
+
+                        <div class="rlgc-form-buttons">
+                            <button type="submit" id="save-rlgc">保存</button>
+                            <button type="button" id="clear-rlgc" class="delete-button">削除</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Graph Section -->
+            <div class="graph-section">
+                <!-- チェックボックスセクションをグラフの直上に移動 -->
+                <div class="checkbox-container_group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="autoscale-checkbox" checked>
+                        <label for="autoscale-checkbox">Autoscale</label>
+                    </div>
+
+                    <div class="max-impedance-container">
+                        <label for="max-impedance">Zin(max)</label>
+                        <input type="number" id="max-impedance" value="300" min="0" disabled>
+                    </div>
+
+                    <div class="error-message" style="display: none;">
+                        <label id="error-message" for="max-impedance">Too small value!</label>
+                    </div>
+                </div>
+
+                <canvas id="impedanceChart" width="800" height="400"></canvas>
+            </div>
+
+        </div> <!-- End of main-content -->
+
+        <!-- Input and Output Section -->
+        <form class="input-form">
+            <div class="input-section">
+
+                <!-- Freq Input (Centered) -->
+                <div class="input-row input-row-freq">
+                        <label for="frequency">Freq(Hz):</label>
+                        <input type="number" id="frequency" name="frequency" value="20000" min="0">
+                </div>
+
+                <!-- Finite Line Parameters -->
+                <fieldset class="finite-line-parameters">
+                    <legend>Finite Line Parameters</legend>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="line-length">Length(km):</label>
+                            <input type="number" id="line-length" name="line_length" value="1" min="0">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="load-magnitude">|ZL|(Ω):</label>
+                            <input type="number" id="load-magnitude" name="load_magnitude" value="1" min="0">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="load-phase">Phase(°):</label>
+                            <input type="number" id="load-phase" name="load_phase" value="0">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Finite Line Figure -->
+                <div class="container_line_svg">
+                    <img src="./assets/images/line_ppt2.svg" alt="finite line image" width="400" height="120">
+                </div>
+
+                <!-- Output Section -->
+                <div class="output-section">
+                    <h2>Output</h2>
+                    <p>Characteristic Impedance (Z₀): 
+                        <span id="z0_polar"></span> (Polar),
+                        <span id="z0_complex"></span> (Complex)
+                    </p>
+                    <p>Attenuation Constant (α): <span id="attenuation"></span></p>
+                    <p>Phase Constant (β): <span id="beta"></span> degrees/km</p>
+                    <p>Input Impedance (Zin): 
+                        <span id="zin_polar"></span> (Polar), 
+                        <span id="zin_complex"></span> (Complex)
+                    </p>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.2/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/scripts/calc.js"></script>
+
+</body>
+</html>

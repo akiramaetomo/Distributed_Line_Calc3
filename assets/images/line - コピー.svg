@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="42.874 25.298 604.747 164.032" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  <line x1="142" y1="77" x2="542" y2="77" stroke="black" stroke-width="6" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <line x1="142" y1="123" x2="542" y2="123" stroke="black" stroke-width="6" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <text x="97" y="108" font-family="Arial, sans-serif" font-size="24" text-anchor="end" style="white-space: pre; font-size: 24px;" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)">Zin</text>
+  <line x1="101.856" y1="100" x2="128" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" style="" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <rect x="542" y="61.691" width="40" height="74.156" fill="none" stroke="black" stroke-width="2" style="" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <text x="602" y="110" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" style="white-space: pre; font-size: 24px;" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)">ZL</text>
+  <text x="335.534" y="163.834" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" style="white-space: pre; font-size: 24px;" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)">Length</text>
+  <line x1="142" y1="145" x2="142" y2="165" stroke="black" stroke-width="2" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <line x1="542" y1="145" x2="542" y2="165" stroke="black" stroke-width="2" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <text x="330.453" y="108.115" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" style="white-space: pre; font-size: 24px;" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)">Z0</text>
+  <line x1="376.687" y1="154.231" x2="521.07" y2="154.231" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" style="" transform="matrix(1, 0, 0, 1, -2.842170943040401e-14, -2.842170943040401e-14)"/>
+  <line x1="163.583" y1="154.232" x2="293.09" y2="154.232" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" style="transform-origin: 228.337px 154.232px;" transform="matrix(-1, 2.4234e-7, -2.8091e-7, -1.00000028091, 0.00007191292, -0.00003595646)"/>
+</svg>

@@ -1,0 +1,12 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "no-redeclare": "error",  // 関数名や変数の重複をエラーとして検出
+        "semi": ["error", "always"],  // セミコロンの使用を強制
+        "quotes": ["error", "single"]  // シングルクォートの使用を強制
+    }
+}

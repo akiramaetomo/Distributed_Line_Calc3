@@ -1,0 +1,389 @@
+
+
+/* 全ての要素にbox-sizingを適用 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+.version {
+    font-size: 0.6em; /* タイトルより小さなフォントサイズに設定 */
+    color: #555; /* 灰色で少し目立たなくする */
+    margin-left: 10px; /* タイトルとの間にスペースを確保 */
+    vertical-align: middle; /* タイトルと同じ高さに表示 */
+}
+
+.container {
+    max-width: 1200px; /* 幅を広げて横並びに余裕を持たせる */
+    width: 100%;
+    margin: 0 auto; /* 自動マージンで中央揃え */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Wrapper for Flex Layout */
+.main-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* RLGC Management Section */
+.rlgc-management {
+    flex: 1 1 300px; /* 柔軟にサイズを調整 */
+    padding: 15px;
+    border: 2px solid #4A90E2;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.rlgc-management h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.rlgc-selection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.rlgc-selection label {
+    font-weight: bold;
+}
+
+.rlgc-selection select {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.rlgc-selection button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rlgc-selection button:hover {
+    background-color: #357ABD;
+}
+
+.rlgc-form {
+    margin-top: 20px;
+}
+
+.rlgc-form h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#rlgc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#rlgc-form .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#rlgc-form label {
+    flex: 0 0 100px;
+    text-align: right;
+    font-size: 14px;
+}
+
+#rlgc-form input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.rlgc-form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* 中央揃え */
+}
+
+#save-rlgc, #clear-rlgc {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#save-rlgc {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#save-rlgc:hover {
+    background-color: #45a049;
+}
+
+#clear-rlgc {
+    background-color: #f44336;
+    color: #fff;
+}
+
+#clear-rlgc:hover {
+    background-color: #da190b;
+}
+
+/* Delete Button Style */
+.delete-button {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #da190b;
+}
+
+/* Graph Section */
+.graph-section {
+    flex: 2 1 600px; /* グラフに多めのスペースを割り当て */
+    padding: 15px;
+    border: 2px solid #4A90E2;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.graph-section canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* チェックボックスセクションをグラフの直上に配置 */
+.graph-section .checkbox-container_group {
+    margin-bottom: 15px;
+}
+
+.checkbox-container_group {
+    display: flex;
+    gap: 20px; /* 各要素間のスペース */
+    margin-top: 0px; /* Remove top margin as it's moved above graph */
+    margin-bottom: 15px; /* Adjusted to have space below */
+    align-items: center; /* 子要素を垂直中央揃え */
+    flex-wrap: wrap; /* 必要に応じて折り返し */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* チェックボックスとラベルの間隔 */
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.checkbox-container label {
+    font-size: 18px; 
+    cursor: pointer;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.max-impedance-container {
+    display: flex;
+    font-size: 18px; 
+    align-items: center;
+    gap: 5px; /* ラベルと入力ボックスの間隔 */
+}
+
+/* エラーメッセージのスタイル調整 */
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+/* Input and Output Section */
+.input-form {
+    width: 100%;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 各入力行の間隔を調整 */
+    margin-bottom: 15px; /* セクション間のスペース */
+}
+
+/* Freq Input (Centered) */
+.input-row-freq  {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 中央揃え */
+
+    gap: 10px; /* ラベルと入力フォームの間隔 */
+    width: 100%; /* 幅を100%に調整 */
+}
+
+.input-row-freq label {
+    flex: 0 0 100px; /* ラベルの幅を固定 */
+    text-align: right; /* テキストを右揃え */
+    font-size: 14px;
+}
+
+.input-row-freq input {
+    flex: 1; /* 残りのスペースを使用 */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Finite Line Parameters: Length, |ZL|, Phase */
+.finite-line-parameters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.finite-line-parameters .input-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* 横幅が狭くなると縦並びになる */
+}
+
+.finite-line-parameters .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 200px; /*** 要素が重ならないように最小幅を指定 */
+}
+
+.finite-line-parameters .input-group label {
+    flex: 0 0 120px; /* ラベルの幅を固定 */
+    text-align: right; /* テキストを右揃え */
+    font-size: 14px;
+}
+
+.finite-line-parameters .input-group input{
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit Button (オプション) */
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center; /* 中央に配置 */
+    margin-top: 20px; /* 上部にスペースを追加 */
+}
+
+.submit-button:hover {
+    background-color: #357ABD;
+}
+
+/******** Finite Line Figure ********/
+.container_line_svg {
+    margin: 0px 0; /* 上下にマージンを追加 */
+    text-align: center; /* 画像を中央に配置 */
+    display: block; /* インラインブロックの余白を無くす */
+
+}
+
+.container_line_svg img {
+    display: block; /* インラインブロックの余白を無くす */
+    max-width: 100%;
+    margin: 0px 0; /* 上下にマージンを追加 */
+    height: auto;
+    display: inline-block; /* インラインブロックで中央揃え */
+}
+
+/* Output Section */
+.output-section {
+    margin-top: 0px;
+    padding-top: 0px;
+    border-top: 2px solid #ccc;
+}
+
+.output-section h2 {
+    margin-bottom: 10px;
+}
+
+.output-section p {
+    margin: 5px 0;
+}
+
+.output {
+    font-weight: bold;
+}
+
+/* レスポンシブデザインの強化 */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 800px) {
+    .rlgc-selection {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rlgc-selection button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-section {
+        flex-direction: column;
+        gap: 10px; /* 全体の行間を更に縮小 */
+    }
+
+    .input-row-freq {
+        justify-content: center;
+    }
+
+    .input-group {
+        flex: 1 1 100%;
+    }
+
+    /* Submit Button (オプション) */
+    .submit-button {
+        width: 100%;
+    }
+}
