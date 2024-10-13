@@ -68,6 +68,10 @@ const displayRLGCSets = () => {
 // 削除処理を行う関数
 const handleDelete = (index) => {
     statusElement.innerText = '削除処理を開始しています...';
+
+    const confirmDelete = confirm(`RLGCセットを削除してもよろしいですか？`);
+    if (!confirmDelete) return;
+    
     try {
         // 親ウインドウのdeleteRlgcSet関数が存在するか確認
         if (typeof window.opener.RLGCManager.deleteRlgcSet !== 'function') {
