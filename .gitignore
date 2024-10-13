@@ -5,6 +5,7 @@ test/
 # 無視したい特定のファイル
 #temp.txt
 Distributed_Line_Calc.code-workspace
+Distributed_Line_Calc3.code-workspace
 
 # 拡張子が .log のすべてのファイルを無視
 #*.log
